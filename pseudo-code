@@ -17,3 +17,8 @@ la machine selection aleatoirement entre les trois valeur et return l'une des va
 l'humain doit mettre un des 3 reponses proposer ensuite 
 on la return 
 et si l'utilisateur mets autres chose que l'un des trois on va afficher un message
+ 
+
+ probleme 3 comment ecrire la logique pour jouer un seul tour
+ la machine doit prendre en compte les 2 parametre et renvoi a la fin le vainqueur
+ 

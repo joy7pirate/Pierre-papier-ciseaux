@@ -5,7 +5,7 @@ let machinescore=0
 function gethumainchoice(){
     const choixhumain = ["pierre","papier","ciseaux"]
 
-let popup = prompt("donnez votre choix entre pierre, papier et ciseaux")
+let popup = prompt("donnez votre choix entre pierre, papier et ciseaux").toLowerCase()
 if(choixhumain.includes(popup) ){
  console.log("on commence")
 return popup
@@ -26,10 +26,27 @@ function getcomputerchoice(){
     return choixmachine[randomindex];
 
 
-}
-console.log(getcomputerchoice());
-// console.log(popup)
+}console.log(getcomputerchoice());
 
+
+// logique pour jouer au jeu
+
+function playround(choixhumain,choixmachine){
+    if(choixhumain ===choixmachine){
+        console.log("Egalite")
+       return "egalite";
+       
+}
+if(choixhumain==="pierre"){
+    if(choixmachine==="papier"){
+        console.log("vous avez perdu")
+    }else{
+        console.log("vous avez gagnez")
+    }
+}
+    
+}
+// console.log(playround())
 
 
 
