@@ -7,8 +7,13 @@ la machine selection aleatoirement entre les trois valeur et return l'une des va
  le programme le compare et regarde qui a gagner entre la machine et l'utilisateur
 
  sous-Probleme 1 : le choix de la machine 
- 
+
  en entrer on doit avoir pierre papier ou ciseux 
  la machine fait le choix 
  en sortie il a l'un des trois qui est selectionner 
  la machine affiche la valeur selectionner
+
+ probleme 2 le choix de l'humain 
+l'humain doit mettre un des 3 reponses proposer ensuite 
+on la return 
+et si l'utilisateur mets autres chose que l'un des trois on va afficher un message
