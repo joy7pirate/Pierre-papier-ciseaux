@@ -7,13 +7,13 @@ function gethumainchoice(){
 
 let popup = prompt("donnez votre choix entre pierre, papier et ciseaux").toLowerCase()
 if(choixhumain.includes(popup) ){
- console.log("on commence")
 return popup
  } else{
        console.log("faite un choix entre pierre papier ciseaux")
+       return gethumainchoice();
   }
 }
-console.log(gethumainchoice())
+//console.log(gethumainchoice())
 
 
 
@@ -26,27 +26,62 @@ function getcomputerchoice(){
     return choixmachine[randomindex];
 
 
-}console.log(getcomputerchoice());
+}
+//console.log(getcomputerchoice());
 
 
 // logique pour jouer au jeu
 
-function playround(choixhumain,choixmachine){
-    if(choixhumain ===choixmachine){
-        console.log("Egalite")
-       return "egalite";
-       
+function playround(humainchoice,computerchoice){
+
+if(humainchoice === computerchoice){
+    console.log("its a tie") 
 }
-if(choixhumain==="pierre"){
-    if(choixmachine==="papier"){
-        console.log("vous avez perdu")
-    }else{
-        console.log("vous avez gagnez")
+else if ((humainchoice === "pierre" && computerchoice === "papier") ||
+             (humainchoice === "papier" && computerchoice === "ciseaux") ||
+             (humainchoice === "ciseaux" && computerchoice === "pierre")) {
+        console.log("Vous avez perdu !");
+        machinescore++;  // L'ordinateur marque un point
     }
-}
+    // Sinon, l'humain gagne
+    else {
+        console.log("Vous avez gagné !");
+        humainscore++;  // L'humain marque un point
+    } 
     
+   // Afficher les scores
+   console.log("Score humain: " + humainscore);
+   console.log("Score machine: " + machinescore);   
+     
+      
 }
 // console.log(playround())
+function playgame(){
+humainscore= 0;
+machinescore=0;
 
+    for(let i=1; i<=5; i++){
+        console.log(`manche${i}`);
+        const humainselection= gethumainchoice()
+        const computerselection = getcomputerchoice()
+         playround(humainselection,computerselection)
+    
+    }
+    console.log("score final");
+     // Afficher les scores
+     console.log("Score humain: " + humainscore);
+     console.log("Score machine: " + machinescore);
+
+
+    // Déclarer le gagnant
+    if (humainscore > machinescore) {
+        console.log("Félicitations ! Vous avez gagné le jeu !");
+    } else if (humainscore < machinescore) {
+        console.log("Désolé, l'ordinateur a gagné le jeu !");
+    } else {
+        console.log("C'est un match nul !");
+    }
+}
+playgame()
 
 
